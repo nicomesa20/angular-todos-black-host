@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Todo } from '../interfaces/todo.interface';
-import { Observable } from 'rxjs'
 import { uid } from 'uid'
 
 @Injectable({
@@ -9,7 +8,7 @@ import { uid } from 'uid'
 })
 export class TodoService {
 
-  private readonly api = 'localhost:3000/task'
+  private readonly api = 'http://localhost:3000/task'
 
   constructor(
     private readonly http: HttpClient
@@ -23,11 +22,11 @@ export class TodoService {
     return this.http.post(this.api, { ...todo, id: uid() })
   }
 
-  editTodo(id: number, todo: Todo) {
+  editTodo(id: string, todo: Todo) {
     return this.http.put(`${this.api}/${id}`, todo)
   }
 
-  removeTodo(id: number) {
+  removeTodo(id: string) {
     return this.http.delete(`${this.api}/${id}`)
   }
 }

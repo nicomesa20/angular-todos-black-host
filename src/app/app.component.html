@@ -1,14 +1,1 @@
-<div class="w-[400px] min-w-[90%] w-100 m-auto bg-white rounded-md min-h-[200px] shadow-xl p-8">
-  <h1 class="mb-8 text-[2rem] text-center">TODOS 💡</h1>
-  <form class="flex flex-col  border-b-gray-50" (ngSubmit)="onSubmit()">
-    <input class="mb-4 p-3 bg-gray-100 rounded-md" [(ngModel)]="todoText" placeholder="Que tienes en mente?"
-      type="text">
-
-    <button class="hidden" type="submit"></button>
-  </form>
-  <ul>
-    <li *ngFor="let todo of todos" class="mb-2 p-3 bg-gray-100 rounded-md" [class.]>
-      {{todo.value}}
-    </li>
-  </ul>
-</div>
+<app-todo></app-todo>

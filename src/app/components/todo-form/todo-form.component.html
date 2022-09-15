@@ -1,0 +1,6 @@
+<form class="flex flex-col  border-b-gray-50" (ngSubmit)="onSubmit()">
+  <input class="p-3 bg-gray-100 rounded-md" [(ngModel)]="todoText" [ngModelOptions]="{standalone: true}" placeholder="Que tienes en mente?"
+    type="text">
+
+  <button class="hidden" type="submit"></button>
+</form>

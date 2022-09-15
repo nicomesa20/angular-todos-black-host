@@ -1,0 +1,12 @@
+<span *ngIf="!editing; else editTodo" class="cursor-pointer" [class.line-through]="todo?.completed"
+  (dblclick)="toggleEditFlag()">🚀 {{todo?.value}}</span>
+<ng-template #editTodo>
+  <app-todo-form (createTodo)="onEditTodo('value' ,$event)" (dblclick)="toggleEditFlag()" [todoText]="todo!.value">
+  </app-todo-form>
+</ng-template>
+<div class="todo__actions">
+  <input class="mr-3" [(ngModel)]="todo!.completed" (ngModelChange)="onEditTodo('completed', todo!.completed)"
+    type="checkbox">
+  <button (click)="onDeleteClicked()" class="border-none outline-none transition-all hover:text-red-500"><i
+      class="fa-solid fa-x"></i></button>
+</div>

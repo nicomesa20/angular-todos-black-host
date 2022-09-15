@@ -1,0 +1,10 @@
+<div class="w-[400px] min-w-[90%] w-100 m-auto bg-white rounded-md min-h-[200px] shadow-xl p-8">
+  <h1 class="mb-8 text-[2rem] text-center">TODOS 💡</h1>
+  <app-todo-form class="block mb-4" (createTodo)="onCreateTodo($event)"></app-todo-form>
+  <ul>
+    <app-todo-item @todoAnimations *ngFor="let todo of todos" [todo]="todo" (deleteTodo)="onDelete($event)"
+      (editTodo)="onUpdate($event)"
+      class="relative mb-2 p-3 bg-gray-100 rounded-md flex justify-between items-center transition-all hover:bg-blue-50">
+    </app-todo-item>
+  </ul>
+</div>

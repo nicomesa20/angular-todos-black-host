@@ -1,0 +1,18 @@
+app-todo-item {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: purple;
+    border-radius: 5px 0 0 5px;
+  }
+}
+
+app-todo-item:hover {
+  &::before {
+    background-color: blue;
+  }
+}
